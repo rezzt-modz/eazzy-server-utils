@@ -1,0 +1,28 @@
+modLoader = "javafml" #mandatory
+loaderVersion = "*" #mandatory. Allow all forge versions as we are defining what Minecraft versions we require later on
+license = "MIT" # Review your options at https://choosealicense.com/.
+
+[[mods]] #mandatory
+modId = "eazzyserverutils" #mandatory
+version = "1.0.1" #mandatory
+displayName = "eazzy server utils" #mandatory
+logoFile = "assets/eazzyserverutils/icon.png" #optional
+credits = "" #optional
+authors = ["Your Name"] #optional
+description = '''
+Eazzy Server Utils is a Forge mod for Minecraft 1.20.1 that adds essential utilities for multiplayer servers, serving both regular players and staff with categorized commands.
+'''
+
+[[dependencies.eazzyserverutils]] #optional
+modId = "forge" #mandatory
+mandatory = true #mandatory
+versionRange = "[0,)" #mandatory
+ordering = "NONE" # The order that this dependency should load in relation to your mod, required to be either 'BEFORE' or 'AFTER' if the dependency is not mandatory
+side = "BOTH" # Side this dependency is applied on - 'BOTH', 'CLIENT' or 'SERVER'
+
+[[dependencies.eazzyserverutils]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"

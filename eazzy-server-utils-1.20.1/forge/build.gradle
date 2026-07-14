@@ -1,0 +1,65 @@
+plugins {
+    id 'unimined-forge' // <-- Go here for Forge mixin configuration (CTRL+Left Click)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.github.llamalad7:mixinextras-common:0.3.5")
+    implementation("io.github.llamalad7:mixinextras-forge:0.3.5")
+}
+
+// Disable test compilation as this project has no test sources.
+// Unimined configures a test source set that causes javac to fail with "no source files".
+tasks.compileTestJava {
+    enabled = false
+}
+
+tasks.test {
+    enabled = false
+}
+
+// Unimined's built-in mixin remapping does not remap @At target descriptors for
+// MixinExtras injectors (such as WrapOperation). This causes the chat head mixin
+// to fail in production because GuiGraphics#drawString is obfuscated to m_280648_.
+// Patch the generated refmap so the target descriptor is correctly remapped.
+tasks.remapJar.doLast {
+    def jarFile = archiveFile.get().asFile
+    def refmapName = "${mod_id}.mixins-refmap.json"
+
+    def tempJar = File.createTempFile(jarFile.name, ".tmp")
+    tempJar.deleteOnExit()
+
+    jarFile.withInputStream { jarInput ->
+        def jarIn = new java.util.jar.JarInputStream(jarInput)
+        tempJar.withOutputStream { jarOutput ->
+            def jarOut = new java.util.jar.JarOutputStream(jarOutput)
+            def entry = jarIn.nextJarEntry
+            while (entry != null) {
+                def bytes = jarIn.readAllBytes()
+                if (entry.name == refmapName) {
+                    def json = new groovy.json.JsonSlurper().parseText(new String(bytes, "UTF-8"))
+                    def mixinMappings = json.mappings["dev/rezzt/eazzyserverutils/mixins/ChatComponentMixin"]
+                    if (mixinMappings != null) {
+                        mixinMappings.put(
+                            "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)I",
+                            "Lnet/minecraft/client/gui/GuiGraphics;m_280648_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)I"
+                        )
+                    }
+                    bytes = new groovy.json.JsonBuilder(json).toString().getBytes("UTF-8")
+                }
+                def newEntry = new java.util.jar.JarEntry(entry.name)
+                jarOut.putNextEntry(newEntry)
+                jarOut.write(bytes)
+                jarOut.closeEntry()
+                entry = jarIn.nextJarEntry
+            }
+            jarOut.finish()
+        }
+        jarIn.close()
+    }
+
+    java.nio.file.Files.move(tempJar.toPath(), jarFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+}

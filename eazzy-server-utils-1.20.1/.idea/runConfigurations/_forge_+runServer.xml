@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name=":forge Minecraft Server" factoryName="Application" type="Application">
+        <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-21-openjdk"></option>
+        <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true"></option>
+        <envs>
+            <env name="MCP_MAPPINGS" value="unimined.stub"></env>
+            <env name="MOD_CLASSES" value="_forge_main%%/home/rezzt/personal-data/minecraft-projects/mod-projects/eazzy-server-utils/eazzy-server-utils-1.20.1/forge/build/resources/main:_forge_main%%/home/rezzt/personal-data/minecraft-projects/mod-projects/eazzy-server-utils/eazzy-server-utils-1.20.1/forge/build/classes/java/main"></env>
+            <env name="FORGE_SPEC" value="2"></env>
+        </envs>
+        <option name="MAIN_CLASS_NAME" value="cpw.mods.bootstraplauncher.BootstrapLauncher"></option>
+        <module name="eazzyserverutils.forge.main"></module>
+        <classpathModifications></classpathModifications>
+        <option name="PROGRAM_PARAMETERS" value="--launchTarget forgeserveruserdev --gameDir . --fml.forgeVersion 47.4.10 --fml.mcVersion 1.20.1 --fml.forgeGroup net.minecraftforge --fml.mcpVersion 20230612.114412 --mixin eazzyserverutils.mixins.json"></option>
+        <option name="VM_PARAMETERS" value="-javaagent:/home/rezzt/.gradle/caches/modules-2/files-2.1/io.github.juuxel/unprotect/1.3.0/d51641f60082321fa30f4b220741d2c9fe122151/unprotect-1.3.0.jar -Djava.net.preferIPv6Addresses=system -p /home/rezzt/.gradle/caches/modules-2/files-2.1/cpw.mods/bootstraplauncher/1.1.2/c546e00443d8432cda6baa1c860346980742628/bootstraplauncher-1.1.2.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/cpw.mods/securejarhandler/2.1.10/51e6a22c6c716beb11e244bf5b8be480f51dd6b5/securejarhandler-2.1.10.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.8/36e4d212970388e5bd2c5180292012502df461bb/asm-commons-9.8.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.8/395f1c1f035258511f27bc9b2583d76e4b143f59/asm-util-9.8.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.8/b9747a320844b6cb1eacd90d8ecfd260a16c01d3/asm-analysis-9.8.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.8/18419ca5b77a2f81097c741e7872e6ab8d2f40d/asm-tree-9.8.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.8/dc19ecb3f7889b7860697215cae99c0f9b6f6b4b/asm-9.8.jar:/home/rezzt/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarFileSystems/0.3.19/2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020/JarJarFileSystems-0.3.19.jar --add-modules ALL-MODULE-PATH --add-opens java.base/java.util.jar=cpw.mods.securejarhandler --add-opens java.base/java.lang.invoke=cpw.mods.securejarhandler --add-exports java.base/sun.security.util=cpw.mods.securejarhandler --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -DlegacyClassPath.file=/home/rezzt/personal-data/minecraft-projects/mod-projects/eazzy-server-utils/eazzy-server-utils-1.20.1/forge/.gradle/unimined/local/legacy_classpath.txt -DignoreList=bootstraplauncher,securejarhandler,asm-commons,asm-util,asm-analysis,asm-tree,asm,JarJarFileSystems,client-extra,fmlcore,javafmllanguage,lowcodelanguage,mclanguage,forge- -DmergeModules=jna-5.10.0.jar,jna-platform-5.10.0.jar -Dforge.enableGameTest=true"></option>
+        <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forge/run/server"></option>
+        <method v="2">
+            <option name="Make" enabled="true"></option>
+            <option scriptParameters="" name="Gradle.BeforeRunTask" externalProjectPath="$PROJECT_DIR$/forge" vmOptions="" enabled="true" tasks="preRunServer"></option>
+        </method>
+    </configuration>
+</component>

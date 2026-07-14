@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="eazzy_server_utils"
+version="1.0.0"
+displayName="Eazzy Server Utils"
+description='''
+Eazzy Server Utils is a NeoForge mod for Minecraft 1.21.8 that adds essential utilities for multiplayer servers, serving both regular players and staff with categorized commands.
+'''
+
+[[dependencies.eazzy_server_utils]]
+modId="neoforge"
+type="required"
+versionRange="[21.8,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.eazzy_server_utils]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.8]"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+MixinConfigs: eazzyserverutils.mixins.json
+Fabric-Loom-Mixin-Remap-Type: mixin
+

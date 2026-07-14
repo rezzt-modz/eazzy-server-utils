@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.rezzt.eazzyserverutils.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ChatComponentAccessor",
+    "ChatComponentMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

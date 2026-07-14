@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-preprocessor/2025.1.14/3de40cec71d532323061bb6bb03754cc2e039db4/manifold-preprocessor-2025.1.14.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-strings/2025.1.14/22729a1b928d11f4671545fcd0e9f3ef5120ba85/manifold-strings-2025.1.14.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold/2025.1.14/2ad77293f8f2d88ccca9e629bf2ae75ece964164/manifold-2025.1.14.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-rt/2025.1.14/1b6a4fe3157b664dae27002d6619fd6e064052be/manifold-rt-2025.1.14.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-util/2025.1.14/f1ed581e2b1e2d038cd242db977bbc7931376fbb/manifold-util-2025.1.14.jar" />
+        </processorPath>
+        <module name="eazzyserverutils.main" />
+        <module name="eazzyserverutils.forge.main" />
+        <module name="eazzyserverutils.common.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="21" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xplugin:Manifold" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eazzyserverutils.buildSrc" options="" />
+      <module name="eazzyserverutils.buildSrc.main" options="" />
+      <module name="eazzyserverutils.buildSrc.test" options="" />
+    </option>
+  </component>
+</project>
